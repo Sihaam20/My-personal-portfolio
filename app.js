@@ -1,36 +1,46 @@
-// Add an event listener to the menu toggle button for opening and closing the menu
-document.querySelector('.menu-toggle-button').addEventListener('click', function() {
-    document.querySelector('.menu').classList.toggle('open');
+document.addEventListener('DOMContentLoaded', () => {
+  const menuToggle = document.querySelector('.menu-toggle-button');
+  const menu = document.querySelector('.menu');
+
+  menuToggle.addEventListener('click', () => {
+    menu.classList.toggle('active');
   });
-  
-  // Add an event listener to the theme toggle button for switching between light and dark themes
-  document.querySelector('.theme-toggle-button').addEventListener('click', function() {
-    document.body.classList.toggle('dark-theme');
-  });
-  
-  // Smooth scroll to section when clicking on a navigation link
-  document.querySelectorAll('.list-link').forEach(function(link) {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      target.scrollIntoView({ behavior: 'smooth' });
-    });
-  });
-  
-  // Show or hide the scroll-to-top button based on the scroll position
-  window.addEventListener('scroll', function() {
-    const scrollToTopButton = document.querySelector('.scroll-top');
-    if (window.scrollY > 500) {
-      scrollToTopButton.classList.add('show');
+
+  // Theme Toggle
+  const themeToggle = document.querySelector('.theme-toggle-button');
+  const body = document.body;
+  let isDarkMode = false;
+
+  themeToggle.addEventListener('click', () => {
+    isDarkMode = !isDarkMode;
+    if (isDarkMode) {
+      body.classList.add('dark-mode');
     } else {
-      scrollToTopButton.classList.remove('show');
+      body.classList.remove('dark-mode');
     }
   });
-  
-  // Add form submission handling
-  document.querySelector('.contact-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    // You can add your form submission logic here
-    // For example, send the form data to a server using AJAX
+
+  // Smooth Scrolling
+  const scrollLinks = document.querySelectorAll('.list-link');
+
+  scrollLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href');
+      const target = document.querySelector(targetId);
+      const headerOffset = 80;
+      const elementPosition = target.getBoundingClientRect().top;
+      const offsetPosition = elementPosition - headerOffset;
+
+      window.scrollBy({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+
+      // Hide the menu after clicking on a link (for mobile view)
+      if (menu.classList.contains('active')) {
+        menu.classList.remove('active');
+      }
+    });
   });
-  
+});
