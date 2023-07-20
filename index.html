@@ -214,84 +214,52 @@
         </div>
     </section>
 
-    <!-- CONTACT SECTION -->
-    <section class="get-in-touch" id="contact">
+   <!-- CONTACT SECTION -->
+    <section class="contact section" id="contact">
         <div class="container">
             <div class="section-title-container">
-                <h2 class="title section-title">Get in Touch</h2>
+                <h2 class="title section-title">Contact</h2>
             </div>
-            <div class="section-description d-grid">
-                <div class="scroll-reveal-left">
-                    <p class="description">
-                        Hi, I'm <span class="text-bold">SIHAAM</span>. I am a final year B.Tech student pursuing Artificial Intelligence and Data Science. I am a versatile and vibrant personality with good ethical and social skills, strong public relations, communication, and interpersonal skills.
-                    </p>
-                </div>
-                <div class="scroll-reveal-right">
-                    <div class="description-image has-sparkles">
-                        <img src="get_in_touch.png" alt="">
+            <div class="contact-form-container">
+                <form class="contact-form">
+                    <div class="input">
+                        <input type="text" id="name" required>
+                        <label for="name" class="input-label">Name<span class="required-field">*</span></label>
                     </div>
-                    <div class="form-container">
-                        <form action="/submit" class="contact-form" method="POST">
-                            <div class="input-group">
-                                <div class="input">
-                                    <input type="text" id="name" required>
-                                    <label for="name" class="input-label">Name <span class="required-field">*</span></label>
-                                </div>
-                                <div class="input">
-                                    <input type="email" id="email" required>
-                                    <label for="email" class="input-label">Email<span class="required-field">*</span></label>
-                                </div>
-                                <div class="input">
-                                    <textarea id="message" required></textarea>
-                                    <label for="message" class="input-label">Message<span class="required-field">*</span></label>
-                                </div>
-                            </div>
-                            <button type="submit" class="button form-button button-fill">Send Message</button>
-                        </form>
+                    <div class="input">
+                        <input type="email" id="email" required value="sihaam269@gmail.com">
+                        <label for="email" class="input-label">Email<span class="required-field">*</span></label>
                     </div>
-                </div>
+                    <div class="input">
+                        <textarea id="message" required></textarea>
+                        <label for="message" class="input-label">Message<span class="required-field">*</span></label>
+                    </div>
+                    <button type="submit" class="button form-button button-fill" id="sendButton">Send Message</button>
+                </form>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="footer-container container">
-            <div class="social-media">
-                <ul class="list">
-                    <li class="list-item">
-                        <a href="https://www.instagram.com/sihaam_sheik/" class="list-link">
-                            <i class="bx bxl-instagram"></i>
-                        </a>
-                    </li>
-                    <li class="list-item">
-                        <a href="https://www.linkedin.com/in/sihaam-s-55b900213" class="list-link">
-                            <i class="bx bxl-linkedin"></i>
-                        </a>
-                    </li>
-                    <li class="list-item">
-                        <a href="https://github.com/Sihaam20" class="list-link">
-                            <i class="bx bxl-github"></i>
-                        </a>
-                    </li>
-                    <li class="list-item">
-                        <a href="https://www.kaggle.com/sihaamsheik" class="list-link">
-                            <i class="bx bxl-kaggle"></i>
-                        </a>
-                    </li>
-                </ul>
+    <!-- FOOTER SECTION -->
+    <footer class="footer section">
+        <div class="cta">
+            <a href="https://drive.google.com/file/d/1tOyckBEH1QCe2Rp3vSdZ2JF4mmzuFrGr/view?usp=sharing" class="button download-cv">Download CV</a>
+        </div>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2023 SIHAAM SHEIK</p>
+                <div class="socials">
+                    <a href="#" class="social-link"><i class="bx bxl-kaggle"></i></a>
+                    <a href="https://twitter.com/Sihaam_sheik" class="social-link"><i class="bx bxl-twitter"></i></a>
+                    <a href="https://www.instagram.com/sihaam_sheik/" class="social-link"><i class="bx bxl-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/sihaam-s-55b900213" class="social-link"><i class="bx bxl-linkedin"></i></a>
+                    <a href="https://github.com/Sihaam20" class="social-link"><i class="bx bxl-github"></i></a>
+                </div>
             </div>
-            <div class="cta">
-                <a href="https://drive.google.com/file/d/1tOyckBEH1QCe2Rp3vSdZ2JF4mmzuFrGr/view?usp=sharing" class="button download-cv">Download CV</a>
-            </div>
-            <span>&copy; 2023 Sihaam. All rights reserved</span>
-            <a href="#home" class="scroll-top">
-                <i class="bx bx-chevron-up"></i> Back to top
-            </a>
         </div>
     </footer>
 
-    <!-- MY SCRIPT -->
+    <!-- SCRIPTS -->
     <script src="app.js"></script>
 </body>
 </html>
